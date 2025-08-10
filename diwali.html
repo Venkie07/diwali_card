@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diwali Celebration Invitation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(ellipse at bottom, #0d1b3d 0%, #000 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Half Moon */
+.moon {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #fffde7, #fdd835 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255, 255, 200, 0.8),
+              0 0 50px rgba(255, 255, 200, 0.6);
+  overflow: hidden;
+  z-index: 0;
+}
+.moon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px; /* shifts shadow to create half moon */
+  width: 100%;
+  height: 100%;
+  background: #0d1b3d;
+  border-radius: 50%;
+}
+
+/* Twinkling stars */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite ease-in-out;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+/* Generate multiple stars */
+.star:nth-child(1) { top: 10%; left: 20%; width: 2px; height: 2px; animation-delay: 0s; }
+.star:nth-child(2) { top: 15%; left: 70%; width: 3px; height: 3px; animation-delay: 1s; }
+.star:nth-child(3) { top: 25%; left: 40%; width: 2px; height: 2px; animation-delay: 0.5s; }
+.star:nth-child(4) { top: 30%; left: 80%; width: 2px; height: 2px; animation-delay: 1.5s; }
+.star:nth-child(5) { top: 50%; left: 60%; width: 2px; height: 2px; animation-delay: 0.2s; }
+.star:nth-child(6) { top: 55%; left: 15%; width: 3px; height: 3px; animation-delay: 1.2s; }
+.star:nth-child(7) { top: 65%; left: 75%; width: 2px; height: 2px; animation-delay: 0.8s; }
+.star:nth-child(8) { top: 70%; left: 30%; width: 2px; height: 2px; animation-delay: 1.8s; }
+.star:nth-child(9) { top: 85%; left: 50%; width: 3px; height: 3px; animation-delay: 0.3s; }
+.star:nth-child(10) { top: 90%; left: 80%; width: 2px; height: 2px; animation-delay: 1.1s; }
+
+/* Fireworks */
+.firework {
+  position: absolute;
+  border-radius: 50%;
+  animation: explode 1.5s ease-out infinite;
+  opacity: 0.8;
+  z-index: 0;
+}
+@keyframes explode {
+  0% { transform: scale(0); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+.firework.one {
+  width: 10px; height: 10px;
+  background: radial-gradient(circle, #ff0, transparent);
+  top: 20%; left: 30%;
+  animation-delay: 0s;
+}
+.firework.two {
+  width: 12px; height: 12px;
+  background: radial-gradient(circle, #ff5733, transparent);
+  top: 40%; left: 70%;
+  animation-delay: 0.5s;
+}
+.firework.three {
+  width: 8px; height: 8px;
+  background: radial-gradient(circle, #00f0ff, transparent);
+  top: 60%; left: 50%;
+  animation-delay: 1s;
+}
+
+/* Invitation Card */
+.invite-container {
+  background: rgba(255, 243, 224, 0.95);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(243, 139, 45, 0.5);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Glowing ring */
+.invite-container::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border-radius: 25px;
+  background: conic-gradient(#ff9800, #ffcc80, #ff9800);
+  z-index: -1;
+  padding: 5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.5); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #ffcc80, #ff8f00, #ffcc80);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+.diya {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  animation: flicker 1s infinite alternate;
+}
+@keyframes flicker {
+  from { text-shadow: 0 0 5px #ffb300, 0 0 15px #ff6f00; }
+  to { text-shadow: 0 0 15px #ffcc80, 0 0 30px #ffa000; }
+}
+
+p.details {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.4;
+  color: #4b2e05;
+}
+
+.rsvp-btn {
+  background: linear-gradient(45deg, #f57c00, #ff9800);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 25px;
+  box-shadow: 0 5px 15px rgba(230, 81, 0, 0.6);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.rsvp-btn:hover {
+  background: linear-gradient(45deg, #ef6c00, #ff8f00);
+  transform: scale(1.05);
+}
+
+.footer {
+  font-size: 0.9rem;
+  margin-top: 20px;
+  color: #a75c00;
+}
+
+@media (max-width: 500px) {
+  h1 { font-size: 2.4rem; }
+  .diya { font-size: 3rem; }
+  p.details { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+  <!-- Half Moon -->
+  <div class="moon"></div>
+
+  <!-- Twinkling stars -->
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+
+  <!-- Fireworks -->
+  <div class="firework one"></div>
+  <div class="firework two"></div>
+  <div class="firework three"></div>
+
+  <!-- Card -->
+  <div class="invite-container">
+    <div class="diya">🪔</div>
+    <h1>Happy Diwali!</h1>
+    <p class="details">You are warmly invited to celebrate the Festival of Lights with us.</p>
+    <p class="details"><strong>Date:</strong> 12th November 2025</p>
+    <p class="details"><strong>Time:</strong> 7:00 PM onwards</p>
+    <p class="details"><strong>Venue:</strong> 123 Celebration Lane, Your City</p>
+    <button class="rsvp-btn">RSVP Now</button>
+    <div class="footer">Please bring your brightest smile and festive spirit!</div>
+  </div>
+</body>
+</html>
